@@ -11,9 +11,9 @@
 name: 'Security: Sync from Public'
 run-name: "${{ github.event_name == 'workflow_dispatch' && format('Security: Sync from Public (force={0})', inputs.force) || '' }}"
 
+# Only n8n-io/n8n-private can perform this upstream sync.
+# Keep manual dispatch available; avoid hourly skipped runs in forks.
 on:
-  schedule:
-    - cron: '0 * * * *'
   workflow_dispatch:
     inputs:
       force:

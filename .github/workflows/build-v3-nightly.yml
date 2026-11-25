@@ -13,10 +13,9 @@
 
 name: 'Build: v3 Nightly Docker Images'
 
+# This fork is not n8n-io/n8n and lacks the required 3.x release setup.
+# Keep manual dispatch available; avoid upstream-only automatic schedules.
 on:
-  schedule:
-    # 08:00 UTC — after the master→3.x sync (06:00) so the image reflects the latest sync
-    - cron: '0 8 * * *'
   workflow_dispatch:
     inputs:
       force_rc:

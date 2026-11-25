@@ -1,8 +1,8 @@
 name: 'Test: Benchmark Destroy Env'
 
+# This fork does not have the upstream Azure benchmark credentials.
+# Run destructive benchmark cleanup only with an explicit manual dispatch.
 on:
-  schedule:
-    - cron: '0 5 * * *'
   workflow_dispatch:
 
 permissions:
